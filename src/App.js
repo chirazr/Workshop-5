@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+
+
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [message, setmessage ]=useState("Hello")
+  const [test, settest]=useState()
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+    <button onClick={()=>setmessage("hi")}>Show me your name </button>
+    <h1>{message}</h1>
+    </div>
+    <div>
+      <input type ='text' onChange={(e)=>settest(e.target.value)}/>
+      <h1>{test}</h1>
+      <button onClick={()=>setmessage(test)}>OK</button>
+      <h1>{message}</h1>
+    </div>
+      
     </div>
   );
 }
+/* onclick (1) modifier hello par hi*/
+    /* onClick = when you click in button will write a  name*/
 
 export default App;
